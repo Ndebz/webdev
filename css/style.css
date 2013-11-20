@@ -1,0 +1,144 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0C3A6D;
+    color: #292929;
+}
+
+/*header*/
+header{
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+}
+
+header h1{
+    margin:0;
+    padding:0;
+    text-align: center;
+}
+
+/*content*/
+.container{
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+table th{
+    font-size: 14px;
+    background-color: #b9c9fe;
+    color: #039;
+    font-weight: normal;
+    padding: 17px;
+}
+
+table td{
+    font-size: 13px;
+    text-align: center;
+    padding: 13px;
+}
+
+table{
+    border-collapse: collapse;
+}
+table tr{
+    background: #e8edff;
+    color: #669;
+}
+
+button:hover{
+    cursor:pointer;
+}
+
+input[type='submit']:hover{
+    cursor:pointer;
+}
+
+fieldset{
+    background: #D6D6D6;
+}
+
+.add-new{
+    margin-left: 47px;
+}
+
+.contact-list{
+    margin-left: 47px;
+}
+
+.container .nav{
+    float: left;
+    width: 200px;
+}
+
+.nav ul{
+    list-style-type: none;
+}
+
+.nav ul li a{
+    color: blue;
+    
+}
+
+.content{
+    float: left;
+    width: 700px;
+    
+}
+
+.clear{
+    clear: both;
+}
+
+.contacts-home tr:hover{
+    cursor: pointer;
+    background-color: white;
+}
+
+.contacts-home{
+    border-collapse: collapse;
+}
+
+td label{
+    font-weight: bold;
+}
+
+.view-contact{
+    
+    background: #e8edff;
+    
+}
+
+.view-contact td{
+    padding: 5px;
+}
+
+.admin-view-contact td{
+    padding: 5px 9px;
+}
+
+.admin-view-contact th{
+    padding: 7px;
+}
+
+.admin-view-contact thead tr{
+    background: #b9c9fe;
+}
+
+.admin-view-contact{
+    border-collapse: collapse;
+}
+
+/*footer*/
+footer{
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+}

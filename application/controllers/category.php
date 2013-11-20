@@ -8,10 +8,17 @@
             $this->load->helper(array('form', 'url'));
             $this->load->library('form_validation');
             $this->load->library('encrypt');
-            
 
             //load category model
             $this->load->model('Category_model');
+
+            //check login status
+            $this->load->library('session');
+            $logged_id = $this->session->userdata('user_details');
+            if(!$logged_id){
+                $this->load->helper('url');
+                redirect('admin/login','refresh');
+            }
         }
         
         public function index(){
@@ -89,6 +96,18 @@
                 redirect('category','refresh');
 
             }
+        }
+        
+        public function delete(){
+            
+            $details = $this->input->post();
+            //decode encrypted id
+            $id = $this->encrypt->decode($details['id'], '007336');
+            $this->Category_model->delete_category($id);
+            
+            //push deleted catagory contacts to uncatagorised
+            $this->load->model('Contacts_model');
+            $this->Contacts_model->update_category($id);
         }
     }
 

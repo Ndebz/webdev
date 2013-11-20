@@ -43,6 +43,7 @@ header h1{
 
 .nav-inner{
     padding: 10px;
+    position: relative;
 }
 
 .nav-inner ul{
@@ -137,8 +138,40 @@ padding: 10px;
 border-radius: 7px;
 }
 
+.admin-menu ul{
+    list-style-type: none;
+}
+
+.admin-menu ul li{
+    float: left;
+    margin-right: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.admin-menu ul li a{
+    text-decoration: none;
+    color: #135cae;
+}
+
+.admin-menu ul li a:hover{
+    text-decoration: underline;
+    color: #0b3768;
+}
+
 .clear{
     clear: both;
+}
+
+.ajax-search-box{
+    position: absolute;
+    background: #E3E3E3;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
+    width: 141px;
+    top: 80px;
+    left: 12px;
+    display: none;
 }
 
 /*footer*/

@@ -35,5 +35,14 @@
            $this->db->update('category', $details);
            
         }
+        
+         public function delete_category($id){
+             
+             //if not uncatgorised category delete
+             if($id != 7){
+                 $this->db->delete('category' , array('id' => $id));
+             }
+            
+        }
     }
 ?>

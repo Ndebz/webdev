@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head><?php echo $head ?></head>
     <body>
@@ -7,7 +8,10 @@
                 <div class="nav-inner">
                     <h4>Search for contacts</h4>
                 <form method="post" action="<?php echo base_url() ?>index.php/contactbook/search">
-                    <input type="text" name="search" class="search-box"/><br>
+                    <input type="text" name="search" class="search-box" autocomplete="off"/><br>
+                    <div class="ajax-search-box">
+                            
+                    </div>
                     <input type="submit" value="Search" />
                 </form>
                 

@@ -3,6 +3,22 @@
     <?php echo $head?>
     <body>
         <?php echo $header?>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+                //on delete contact
+                $('#delete-contact').click(function(){
+                    
+                    //send to delete controller and ignore results
+                    $.post( "<?php echo base_url().'index.php/contacts/delete'; ?>", { id: "<?php echo $contact_details['0']->id ?>" } ).done(function( data ) {
+                            //redirect back to list page
+                            window.location = '<?php echo base_url().'index.php/contacts'?>';
+                          });
+                    
+                    
+                });
+            });
+        </script>
         <div class="container">
             <div class="admin-form-container">
                 <div class="errors"><?php echo validation_errors(); ?></div>
@@ -30,6 +46,10 @@
                                 <option value="0" <?php if($contact_details['0']->access_level == 0){ echo 'selected = "selected"' ;} ?>>Unpublished</option>
                             </select>
                         </td>
+                    </tr>
+                    <tr>
+                        <td><label>Title</label></td>
+                        <td><input type="text" name="title" value="<?php echo $contact_details['0']->title ?>"/></td>
                     </tr>
                     <tr>
                         <td><label>First Name</label></td>
@@ -93,7 +113,7 @@
                     </tr>
                     
                     <tr>
-                        <td colspan="2"><input type="hidden" name="id" value="<?php echo $contact_details['0']->id ?>" /><input type="submit" value="Save Contact" /></td>
+                        <td colspan="2"><input type="hidden" name="id" value="<?php echo $contact_details['0']->id ?>" /><input type="submit" value="Save Contact" /> <button id="delete-contact" type="button">Delete Contact</button></td>
                     </tr>
                 </table>
                 </form>

@@ -11,15 +11,13 @@
                     <tr>
                         <th>#</th>
                         <th width="277px">Category Name</th>
-                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach($categories as $category): ?>
                     <tr>
                         <td><?php echo $category->id; ?></td>
-                        <td><?php echo $category->category_name; ?></td>
-                        <td><a href="<?php echo base_url() ?>index.php/category/edit/<?php echo $category->id ?>"><button>Edit</button></a> <a href="#"><button>Delete</button></a></td>
+                        <td><a href="<?php echo base_url() ?>index.php/category/edit/<?php echo $category->id ?>"><?php echo $category->category_name; ?></a></td>  
                     </tr>
                     <?php endforeach?>
                 </tbody>

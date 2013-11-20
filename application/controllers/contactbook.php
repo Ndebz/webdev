@@ -49,6 +49,7 @@ class Contactbook extends CI_Controller{
         //get categories for nav
         $data['categories'] = $this->Category_model->get_all_categories();
         
+        
         //get contact
         $data['contact_details'] = $this->Contacts_model->get_contact($id);
         
@@ -71,6 +72,23 @@ class Contactbook extends CI_Controller{
         
         //load view
         $this->load->view('frontend/search',$data);
+    }
+    
+    public function ajaxsearch(){
+        $search = $this->input->post();
+        $data['categories'] = $this->Category_model->get_all_categories();
+        
+        $data['contacts'] = $this->Contacts_model->get_contacts_by_search($search);
+        
+        
+        //common elements
+        $data['title'] = 'Contacts';
+        $data['head'] = $this->load->view('html/head', $data , true);
+        $data['header'] = $this->load->view('html/header',null , true);
+        $data['footer'] = $this->load->view('html/footer',null , true);
+        
+        //load view
+        $this->load->view('frontend/ajaxsearch',$data);
     }
 }
 

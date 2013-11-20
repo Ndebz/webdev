@@ -12,6 +12,14 @@ class Contacts extends CI_Controller{
         //load  models
         $this->load->model('Contacts_model');
         $this->load->model('Category_model');
+        
+        //check login status
+        $this->load->library('session');
+        $logged_id = $this->session->userdata('user_details');
+        if(!$logged_id){
+            $this->load->helper('url');
+            redirect('admin/login','refresh');
+        }
     }
     
     //shows all contacts
@@ -46,8 +54,9 @@ class Contacts extends CI_Controller{
         
         //set validation rules
         $this->form_validation->set_rules('firstname', 'First Name', 'required');
-        $this->form_validation->set_rules('surname', 'Surname', 'required');
+        $this->form_validation->set_rules('lastname', 'Lastname', 'required');
         $this->form_validation->set_rules('title', 'Title', 'required');
+        $this->form_validation->set_rules('company', 'Company', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
         
         if ($this->form_validation->run() == FALSE){
@@ -68,15 +77,11 @@ class Contacts extends CI_Controller{
     //deletes contacts
     public function delete(){
         
+        $details = $this->input->post();
         
-        $msg = '1';
-        $key = 'super-secret-key';
-        $encrypted_string = $this->encrypt->encode($msg, $key);
-        
-        echo $encrypted_string;
-        echo '<br />';
-        echo $this->encrypt->decode($encrypted_string,$key);
-        
+        //decode encrypted id
+        $id = $this->encrypt->decode($details['id'], '007336');
+        $this->Contacts_model->delete_contact($id);
     }
     
     //edits contacts
@@ -92,9 +97,7 @@ class Contacts extends CI_Controller{
         $data['categories'] = $this->Category_model->get_all_categories();
         
         //load model
-        $data['contact_details'] = $this->Contacts_model->get_contact($id);
-        
-        
+        $data['contact_details'] = $this->Contacts_model->get_contact_details($id);
         
         
         //set validation rules

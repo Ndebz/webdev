@@ -1,11 +1,20 @@
+<!DOCTYPE html>
 <html>
     <?php echo $head ?>
     <body>
         <?php echo $header ?>
         <div class="container">
             <div class="nav">
-                <h4>Search for contacts</h4>
-                <input type="text" class="search-box"/>
+                <div class="nav-inner">
+                    <h4>Search for contacts</h4>
+                <form method="post" action="<?php echo base_url() ?>index.php/contactbook/search">
+                    <input type="text" name="search" class="search-box" autocomplete="off"/><br>
+                    <div class="ajax-search-box">
+                            
+                    </div>
+                    <input type="submit" value="Search" />
+                </form>
+                
                 <h4>Filter by Category</h4>
                 <ul>
                     <li><a href="<?php echo base_url() ?>index.php/contactbook/">All Contacts</a></li>
@@ -15,15 +24,14 @@
                     <?php endforeach; ?>     
                 <?php endif; ?>
                 </ul>
+                </div>
             </div>
             <div class="content">
                 <table class="view-contact">
                     <tr>
                         <td width="120px"><label>Category</label></td>
                         <td width="120px">
-                            <select name="category">
-                                <option value="1">Coming Soon</option>
-                            </select>
+                           <?php echo $contact_details['0']->category_name ?>
                         </td>
                     </tr>
                     <tr>
@@ -36,7 +44,7 @@
                     </tr>
                     <tr>
                         <td><label>Last Name</label></td>
-                        <td>"<?php echo $contact_details['0']->lastname ?></td>
+                        <td><?php echo $contact_details['0']->lastname ?></td>
                     </tr>                   
                     <tr>
                         <td><label>Company</label></td>

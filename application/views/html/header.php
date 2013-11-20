@@ -1,3 +1,8 @@
 <header>
-    <h1>Address Book Application</h1>
+    <h1>Contact Book Application</h1>
+    <?php
+        if(isset($menu)){
+            echo $menu;
+        }
+    ?>
 </header>

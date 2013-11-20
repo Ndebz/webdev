@@ -18,7 +18,8 @@
             //common elements
             $data['title'] = 'Add a new category';
             $data['head'] = $this->load->view('html/head',$data , true);
-            $data['header'] = $this->load->view('html/header',null , true);
+            $data['menu'] = $this->load->view('backend/html/menu',$data , true);
+            $data['header'] = $this->load->view('html/header',$data , true);
             $data['footer'] = $this->load->view('html/footer',null , true);
             
             //get all categories from database
@@ -32,7 +33,8 @@
             //common elements
             $data['title'] = 'Add a new category';
             $data['head'] = $this->load->view('html/head',$data , true);
-            $data['header'] = $this->load->view('html/header',null , true);
+            $data['menu'] = $this->load->view('backend/html/menu',$data , true);
+            $data['header'] = $this->load->view('html/header',$data , true);
             $data['footer'] = $this->load->view('html/footer',null , true);
             
             //set validation rules
@@ -56,7 +58,8 @@
             //common elements
             $data['title'] = 'Edit category';
             $data['head'] = $this->load->view('html/head',$data , true);
-            $data['header'] = $this->load->view('html/header',null , true);
+            $data['menu'] = $this->load->view('backend/html/menu',$data , true);
+            $data['header'] = $this->load->view('html/header',$data , true);
             $data['footer'] = $this->load->view('html/footer',null , true);
             
             //get category

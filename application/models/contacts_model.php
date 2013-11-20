@@ -46,6 +46,15 @@
             return $query->result();
         }
         
+        public function get_contacts_by_search($search){
+            
+            $this->db->select('*');
+            $this->db->from('contacts');
+            $this->db->like('firstname' , $search['search']);
+            $query = $this->db->get();
+            return $query->result();
+        }
+        
         
     }
 ?>

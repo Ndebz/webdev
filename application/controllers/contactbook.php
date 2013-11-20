@@ -24,6 +24,8 @@ class Contactbook extends CI_Controller{
             
         }else{
             $data['contacts'] = $this->Contacts_model->get_contacts_by_category($category);
+            $data['filter'] = $this->Category_model->get_category_by_id($category);
+            $data['filter'] = $data['filter'][0]->category_name;
         }
         
         //common elements
@@ -52,6 +54,23 @@ class Contactbook extends CI_Controller{
         
         //load view
         $this->load->view('frontend/contact', $data);
+    }
+    
+    public function search(){
+        $search = $this->input->post();
+        $data['categories'] = $this->Category_model->get_all_categories();
+        
+        $data['contacts'] = $this->Contacts_model->get_contacts_by_search($search);
+        
+        
+        //common elements
+        $data['title'] = 'Contacts';
+        $data['head'] = $this->load->view('html/head', $data , true);
+        $data['header'] = $this->load->view('html/header',null , true);
+        $data['footer'] = $this->load->view('html/footer',null , true);
+        
+        //load view
+        $this->load->view('frontend/search',$data);
     }
 }
 

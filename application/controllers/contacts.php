@@ -20,7 +20,8 @@ class Contacts extends CI_Controller{
         //common elements
         $data['title'] = 'Contacts';
         $data['head'] = $this->load->view('html/head',$data , true);
-        $data['header'] = $this->load->view('html/header',null , true);
+        $data['menu'] = $this->load->view('backend/html/menu',$data , true);
+        $data['header'] = $this->load->view('html/header',$data , true);
         $data['footer'] = $this->load->view('html/footer',null , true);
         
         //get all contacts
@@ -36,7 +37,8 @@ class Contacts extends CI_Controller{
         //common elements
         $data['title'] = 'Add a new contact';
         $data['head'] = $this->load->view('html/head',$data , true);
-        $data['header'] = $this->load->view('html/header',null , true);
+        $data['menu'] = $this->load->view('backend/html/menu',$data , true);
+        $data['header'] = $this->load->view('html/header',$data , true);
         $data['footer'] = $this->load->view('html/footer',null , true);
         
         //categories
@@ -82,7 +84,8 @@ class Contacts extends CI_Controller{
         //common elements
         $data['title'] = 'Edit contact';
         $data['head'] = $this->load->view('html/head',$data , true);
-        $data['header'] = $this->load->view('html/header',null , true);
+        $data['menu'] = $this->load->view('backend/html/menu',$data , true);
+        $data['header'] = $this->load->view('html/header',$data , true);
         $data['footer'] = $this->load->view('html/footer',null , true);
         
         //categories

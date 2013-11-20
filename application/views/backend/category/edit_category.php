@@ -4,11 +4,10 @@
     <body>
         <?php echo $header ?>
         <div class="container">
-            <fieldset>
-                <legend>Add new Category</legend>
                 <div class="errors"><?php echo validation_errors(); ?></div>
                 <?php echo form_open('category/edit'); ?>
-                <table>
+                <div class="admin-form-container">
+                    <table class="">
                     <tr>
                         <td><label>Category Name</label></td>
                         <td><input type="text" name="category_name" value="<?php echo $category[0]->category_name  ?>"/></td>
@@ -20,8 +19,8 @@
                         </td>
                     </tr>
                 </table>
+                </div>
             </form>
-            </fieldset>
         </div>
     </body>
 </html>

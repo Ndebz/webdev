@@ -4,8 +4,7 @@
     <body>
         <?php echo $header ?>
         <div class="container">
-            <fieldset>
-                <legend>Add new Category</legend>
+            <div class="admin-form-container">             
                 <div class="errors"><?php echo validation_errors(); ?></div>
                 <?php echo form_open('category/add'); ?>
                 <table>
@@ -18,7 +17,7 @@
                     </tr>
                 </table>
             </form>
-            </fieldset>
+            </div>
         </div>
         <?php echo $footer ?>
     </body>

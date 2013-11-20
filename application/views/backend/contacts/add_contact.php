@@ -3,12 +3,11 @@
     <?php echo $head?>
     <body>
         <?php echo $header?>
-        <div class="container">
-            <fieldset>
-                <legend>Add New Contact</legend>
-                <div class="errors"><?php echo validation_errors(); ?></div>
+        <div class="container">          
+            <div class="admin-form-container">
+                        <div class="errors"><?php echo validation_errors(); ?></div>
                 <?php echo form_open('contacts/add'); ?>
-                <table>
+                <table class="admin-form-holder">
                     <tr>
                         <td><label>Category</label></td>
                         <td>
@@ -97,8 +96,8 @@
                         <td colspan="2"><input type="submit" value="Save Contact" /></td>
                     </tr>
                 </table>
-                </form>
-            </fieldset>
+                </form> 
+            </div>
         </div>
         <?php echo $footer?>
     </body>

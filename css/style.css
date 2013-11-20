@@ -1,9 +1,11 @@
 body{
     padding: 0;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Tahoma,Helvetica,Arial,sans-serif;
+    font-size: 76%;
+    line-height: 1.3em;
     background: #0C3A6D;
-    color: #292929;
+    color: #333333;
 }
 
 /*header*/
@@ -12,6 +14,9 @@ header{
     margin-left: auto;
     margin-right: auto;
     background: white;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    padding-top: 20px;
 }
 
 header h1{
@@ -30,60 +35,29 @@ header h1{
     padding-bottom: 50px;
 }
 
-table th{
-    font-size: 14px;
-    background-color: #b9c9fe;
-    color: #039;
-    font-weight: normal;
-    padding: 17px;
-}
-
-table td{
-    font-size: 13px;
-    text-align: center;
-    padding: 13px;
-}
-
-table{
-    border-collapse: collapse;
-}
-table tr{
-    background: #e8edff;
-    color: #669;
-}
-
-button:hover{
-    cursor:pointer;
-}
-
-input[type='submit']:hover{
-    cursor:pointer;
-}
-
-fieldset{
-    background: #D6D6D6;
-}
-
-.add-new{
-    margin-left: 47px;
-}
-
-.contact-list{
-    margin-left: 47px;
-}
 
 .container .nav{
     float: left;
     width: 200px;
 }
 
-.nav ul{
-    list-style-type: none;
+.nav-inner{
+    padding: 10px;
 }
 
-.nav ul li a{
-    color: blue;
-    
+.nav-inner ul{
+    list-style-type: none;
+    padding: 0px;
+}
+
+.nav-inner ul li a{
+    text-decoration: none;
+    color: #135cae;
+}
+
+.nav-inner ul li a:hover{
+    text-decoration: underline;
+    color: #0b3768;
 }
 
 .content{
@@ -92,47 +66,79 @@ fieldset{
     
 }
 
-.clear{
-    clear: both;
+.filter-holder{
+    font-size: 15px;
+    margin-bottom: 10px;
 }
 
-.contacts-home tr:hover{
-    cursor: pointer;
-    background-color: white;
-}
-
-.contacts-home{
-    border-collapse: collapse;
-}
-
-td label{
+.filter-holder span{
     font-weight: bold;
 }
 
-.view-contact{
-    
-    background: #e8edff;
-    
+table.home-list , table.admin-list , table.category-list{
+    font-size: 13px;
 }
 
-.view-contact td{
-    padding: 5px;
+table.home-list th , table.admin-list th , table.category-list th{
+    text-align: left;
+}
+table.home-list thead tr , table.admin-list  thead tr , table.category-list thead tr{
+    background: #135CAE;
+    color: white;
 }
 
-.admin-view-contact td{
-    padding: 5px 9px;
+table.home-list tbody tr , table.admin-list tbody tr , table.category-list tbody tr{
+    background: #D6D6D6
 }
 
-.admin-view-contact th{
-    padding: 7px;
+table.home-list a , table.admin-list a , table.category-list a{
+    text-decoration: none;
+    color: #135cae;
 }
 
-.admin-view-contact thead tr{
-    background: #b9c9fe;
+table.home-list a:hover{
+    text-decoration: underline;
+    color: #0b3768;
 }
 
-.admin-view-contact{
-    border-collapse: collapse;
+table.admin-list a:hover{
+    text-decoration: underline;
+    color: #0b3768;
+}
+
+table.category-list a:hover{
+    text-decoration: underline;
+    color: #0b3768;
+}
+
+table.admin-list{
+    width: 100%;
+}
+
+table.view-contact{
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.admin-form-holder{
+    font-size: 13px;
+}
+
+.admin-form-holder input{
+    font-size: 11px;
+}
+
+.admin-form-container{
+    width: 90%;
+margin-left: auto;
+margin-right: auto;
+border: 1px solid #CCCCCC;
+padding: 10px;
+border-radius: 7px;
+}
+
+.clear{
+    clear: both;
 }
 
 /*footer*/
@@ -141,4 +147,10 @@ footer{
     margin-left: auto;
     margin-right: auto;
     background: white;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    text-align: center;
+    font-size: 15px;
+    font-style: italic;
+    padding-bottom: 20px;
 }

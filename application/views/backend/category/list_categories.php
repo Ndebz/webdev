@@ -3,9 +3,10 @@
     <body>
         <?php echo $header ?>
         <div class="container">
-            <p><a href="<?php echo base_url() ?>index.php/category/add"><button class="add-new">Add New Category</button></a></p>
+            <div class="admin-form-container">
+                <p><a href="<?php echo base_url() ?>index.php/category/add"><button class="add-new">Add New Category</button></a></p>
             <?php if(count($categories) > 0): ?>
-            <table cellspacing="2" cellpadding="4" class="contact-list">
+            <table cellspacing="2" cellpadding="4" class="category-list">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -24,6 +25,7 @@
                 </tbody>
             </table>
             <?php endif ?>
+            </div>
         </div>
     </body>
 </html>

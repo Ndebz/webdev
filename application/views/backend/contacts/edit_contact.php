@@ -4,11 +4,10 @@
     <body>
         <?php echo $header?>
         <div class="container">
-            <fieldset>
-                <legend>Edit Contact</legend>
+            <div class="admin-form-container">
                 <div class="errors"><?php echo validation_errors(); ?></div>
                 <?php echo form_open('contacts/edit'); ?>
-                <table>
+                <table class="admin-form-holder">
                     <tr>
                         <td><label>Category</label></td>
                         <td>
@@ -86,7 +85,7 @@
                     </tr>
                     <tr>
                         <td><label>Notes</label></td>
-                        <td><textarea name="notes"><?php echo $contact_details['0']->notes  ?></textarea></td>
+                        <td><textarea name="notes" cols="43" rows="5"><?php echo $contact_details['0']->notes  ?></textarea></td>
                     </tr>                   
                     <tr>
                         <td><label>Add To Mailing List?</label></td>
@@ -98,7 +97,7 @@
                     </tr>
                 </table>
                 </form>
-            </fieldset>
+            </div>
         </div>
         <?php echo $footer?>
     </body>

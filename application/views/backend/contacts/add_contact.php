@@ -5,7 +5,7 @@
         <?php echo $header?>
         <div class="container">          
             <div class="admin-form-container">
-                        <div class="errors"><?php echo validation_errors(); ?></div>
+                <div class="errors"><?php echo validation_errors(); ?></div>
                 <?php echo form_open('contacts/add'); ?>
                 <table class="admin-form-holder">
                     <tr>

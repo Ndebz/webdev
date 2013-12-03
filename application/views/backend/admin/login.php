@@ -4,7 +4,8 @@
     <body>
         <?php echo $header ?>
         <div class="container">
-            <div class="admin-form-container">
+            <div class="inner-container">
+                <div class="admin-form-container">
                 <?php if($wrong != ''): ?>
                 <p>Wrong username and password combination</p>
                 <?php endif ?>
@@ -17,6 +18,7 @@
                     </p>
                     <p><input type="submit" value="login" /></p>
                 </form>
+                </div>
             </div>
         </div>
     </body>

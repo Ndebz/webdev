@@ -42,6 +42,10 @@ class Person_attribute extends CI_Model{
            
        }
        
+       if(empty($available_attribute_ids)){
+            return;
+       }
+       
        //now this is why i love code igniter
        //get all available attributes
        $this->db->select('*');
@@ -54,6 +58,36 @@ class Person_attribute extends CI_Model{
        
     }
     
+    
+    public function saveAttribute($details){
+        $this->db->insert('person_attribute' , $details);
+    }
+    
+    public function updateAttribute($details){
+        
+        $this->db->query("UPDATE person_attribute
+                        SET value='".$details['value']."' 
+                        WHERE person_id='".$details['person_id']."' 
+                        AND attribute_id='".$details['attribute_id']."'");
+        
+    }
+    
+    public function deleteAttribute($person_id , $attribute_id){
+        
+        $this->db->query("DELETE FROM person_attribute
+                        WHERE person_id = '".$person_id."'
+                        AND attribute_id = '".$attribute_id."'");
+    }
+    
+    public function deletePersonAttribute($attribute_id){
+        $this->db->query("DELETE FROM person_attribute
+                        WHERE  attribute_id = '".$attribute_id."'");
+    }
+    
+    public function deletePersonAttributePerson($person_id){
+        $this->db->query("DELETE FROM person_attribute
+                        WHERE  person_id = '".$person_id."'");
+    }
 }
 
 ?>

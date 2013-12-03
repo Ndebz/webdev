@@ -8,6 +8,47 @@ body{
     color: #333333;
 }
 
+
+/* useful */
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.clear{
+    clear: both;
+}
+
+/*admin menu*/
+.admin-menu ul li{
+    float: left;
+    background: #0C3A6D;
+    border-radius: 7px;
+    margin-right: 10px;
+}
+
+.admin-menu{
+    width: 80%;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.admin-menu ul{
+    margin: 0;
+    padding: 0;
+}
+
+.admin-menu ul li a{
+    color: white;
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
 /*header*/
 header{
     width: 960px;
@@ -31,147 +72,34 @@ header h1{
     margin-left: auto;
     margin-right: auto;
     background: white;
-    padding-top: 50px;
     padding-bottom: 50px;
 }
 
-
-.container .nav{
-    float: left;
-    width: 200px;
-}
-
-.nav-inner{
-    padding: 10px;
-    position: relative;
-}
-
-.nav-inner ul{
-    list-style-type: none;
-    padding: 0px;
-}
-
-.nav-inner ul li a{
-    text-decoration: none;
-    color: #135cae;
-}
-
-.nav-inner ul li a:hover{
-    text-decoration: underline;
-    color: #0b3768;
-}
-
-.content{
-    float: left;
-    width: 700px;
-    
-}
-
-.filter-holder{
-    font-size: 15px;
-    margin-bottom: 10px;
-}
-
-.filter-holder span{
-    font-weight: bold;
-}
-
-table.home-list , table.admin-list , table.category-list{
-    font-size: 13px;
-}
-
-table.home-list th , table.admin-list th , table.category-list th{
-    text-align: left;
-}
-table.home-list thead tr , table.admin-list  thead tr , table.category-list thead tr{
-    background: #135CAE;
-    color: white;
-}
-
-table.home-list tbody tr , table.admin-list tbody tr , table.category-list tbody tr{
-    background: #D6D6D6
-}
-
-table.home-list a , table.admin-list a , table.category-list a{
-    text-decoration: none;
-    color: #135cae;
-}
-
-table.home-list a:hover{
-    text-decoration: underline;
-    color: #0b3768;
-}
-
-table.admin-list a:hover{
-    text-decoration: underline;
-    color: #0b3768;
-}
-
-table.category-list a:hover{
-    text-decoration: underline;
-    color: #0b3768;
-}
-
-table.admin-list{
-    width: 100%;
-}
-
-table.view-contact{
-    font-weight: bold;
-    font-size: 13px;
-}
-
-.admin-form-holder{
-    font-size: 13px;
-}
-
-.admin-form-holder input{
-    font-size: 11px;
-}
-
-.admin-form-container{
-    width: 90%;
-margin-left: auto;
-margin-right: auto;
-border: 1px solid #CCCCCC;
-padding: 10px;
-border-radius: 7px;
-}
-
-.admin-menu ul{
-    list-style-type: none;
-}
-
-.admin-menu ul li{
-    float: left;
-    margin-right: 20px;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.admin-menu ul li a{
-    text-decoration: none;
-    color: #135cae;
-}
-
-.admin-menu ul li a:hover{
-    text-decoration: underline;
-    color: #0b3768;
-}
-
-.clear{
-    clear: both;
-}
-
-.ajax-search-box{
-    position: absolute;
-    background: #E3E3E3;
+.inner-container{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
     border: 1px solid #CCCCCC;
-    padding: 5px;
-    width: 141px;
-    top: 80px;
-    left: 12px;
-    display: none;
+    padding: 20px;
+    border-radius: 7px;
+    background: #e8edff;
+}
+
+.popup-box{
+    padding: 20px;
+    background: #e8edff;
+    border-radius: 7px;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table th{
+    background: #0C3A6D;
+    color: white;
+    padding: 8px;
+    text-align: left;
 }
 
 /*footer*/
@@ -186,4 +114,25 @@ footer{
     font-size: 15px;
     font-style: italic;
     padding-bottom: 20px;
+}
+
+/*jqgrid editing*/
+.ui-th-ltr, .ui-jqgrid .ui-jqgrid-htable th.ui-th-ltr {
+border-left: 0 none;
+background: #0C3A6D;
+color: white;
+padding-bottom: 11px;
+}
+
+.ui-jqgrid .ui-jqgrid-htable th div {
+overflow: hidden;
+position: relative;
+height: 20px;
+padding-top: 5px;
+}
+
+.ui-jqgrid .ui-pg-input {
+height: 16px;
+font-size: .8em;
+margin: 0;
 }

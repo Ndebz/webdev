@@ -2,6 +2,11 @@
 <html>
     <?php echo $head ?>
     <body>
+        <script type="text/javascript">
+            $(function() {
+                $( "#datepicker" ).datepicker({ dateFormat: 'yy-mm-dd', maxDate: new Date});
+            });
+        </script>
         <?php echo $header ?>
         <div class="container">
             <div class="inner-container">
@@ -18,7 +23,7 @@
                         </tr>
                         <tr>
                             <td><label>DOB</label></td>
-                            <td><input type="text" name="dob"/></td>
+                            <td><input type="text" name="dob" id="datepicker"/></td>
                         </tr>
                         <tr>
                             <td colspan="2"><input type="submit" value="Save" /></td>

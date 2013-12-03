@@ -10,6 +10,7 @@ class Assign extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->library('encrypt');
         $this->load->model('Person_model');
+        $this->load->model('Attribute_model');
         $this->load->model('Person_attribute');
     }
     
@@ -32,6 +33,11 @@ class Assign extends CI_Controller {
     }
     
     public function assignment($person_id , $attribute_id){
+        
+         $data['person_id'] = $person_id;
+         $data['attribute_id'] = $attribute_id;
+         
+         $data['attribute'] = $this->Attribute_model->get_attribute_by_id($attribute_id);
         
          $data['title'] = 'Assign Attribute';
          $data['head'] = $this->load->view('html/head', $data , true);

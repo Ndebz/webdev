@@ -30,7 +30,7 @@
                                .done(function(data){
                                     if(data == 'error'){
                                         
-                                        alert('Please choose a valid day. Can\'t be in the future or more than 100 years in the past');
+                                        alert('Please choose a valid day. Can\'t be in the future or more than 99 years in the past');
                                         
                                     }else{
                                         $(input).parent().siblings().children('button').text("Edit");

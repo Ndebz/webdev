@@ -20,7 +20,7 @@
                         $(input).focus();
                    }else{
                        
-                       $(this).text("Edit");
+                      
                        
                        //prepare post
                        var post_data = "person_id=<?php echo $person[0]->person_id ?>&" + $(input).attr("name") + "=" + $(input).val();
@@ -28,11 +28,19 @@
                        //send post
                        $.post("<?php echo base_url().'index.php/person/editpersonpost' ?>", post_data)
                                .done(function(data){
-                                    
+                                    if(data == 'error'){
+                                        
+                                        alert('Please choose a valid day. Can\'t be in the future or more than 100 years in the past');
+                                        
+                                    }else{
+                                        $(input).parent().siblings().children('button').text("Edit");
+                                         //disable input
+                                        $(input).attr('disabled','disabled');
+                                         
+                                    }
                                });
                        
-                       //disable input
-                        $(input).attr('disabled','disabled');
+                      
                         
                    }
                    

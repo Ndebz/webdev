@@ -43,7 +43,7 @@ class Person extends CI_Controller {
           
          $this->form_validation->set_rules('firstname', 'First Name', 'required');
          $this->form_validation->set_rules('surname', 'Surname', 'required');
-         $this->form_validation->set_rules('dob', 'DOB', 'required');
+         $this->form_validation->set_rules('dob', 'DOB', 'callback_validate_date');
          
          
          
@@ -81,7 +81,21 @@ class Person extends CI_Controller {
     
       public function editpersonpost(){
           
-          $this->Person_model->editPerson($this->input->post());
+          $details = $this->input->post();
+          $error = false;
+          if(array_key_exists('dob', $details)){
+              if($this->validate_date($details['dob']) == false){
+                  $error = true;
+              }
+          }
+          
+          
+          if($error){
+              echo 'error';
+          }else{
+              $this->Person_model->editPerson($details);
+          }
+          
           
       }
       
@@ -117,11 +131,22 @@ class Person extends CI_Controller {
           redirect("person/edit/$person_id" , "refresh");
       }
       
-      function validate_member($date){
-          //checks if date in future
+      function validate_date($date){
+ 
+          
+         
           $date = strtotime($date);
+         
+           //check if date within last 100 years and is not empty
+          if($date < strtotime(' -100 year') || $date == ''){
+               $this->form_validation->set_message('validate_date', 'DOB is incorrect');
+              return false;
+          }
+          
+          //checks if date in future
          if ($date > time())
-            {
+            { 
+             $this->form_validation->set_message('validate_date', 'DOB is incorrect');
               return false;
             }
             

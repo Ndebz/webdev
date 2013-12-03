@@ -24,7 +24,7 @@ class Admin extends CI_Controller{
             }
             
         //common elements
-            $data['title'] = 'Add a new category';
+            $data['title'] = 'Secure Login';
             $data['head'] = $this->load->view('html/head',$data , true);
             $data['header'] = $this->load->view('html/header',$data , true);
             $data['footer'] = $this->load->view('html/footer',null , true);
